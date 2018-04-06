@@ -1,6 +1,7 @@
 ﻿using Interfaces;
 using Problems_0_50.Largest_prime_factor;
 using Problems_0_50.Multiplesof3and5;
+using Problems_0_50.P11_LargestProductInaGrid;
 using Problems_0_50.P2_Even_Fibonacci_numbers;
 using Problems_0_50.P4_Largest_palindrome_product;
 using Problems_0_50.P5_Smallest_multiple;
@@ -14,7 +15,7 @@ namespace EulerConsole
 {
     public class Program
     {
-        static ISolvable Solvable => new SummationOfPrimesSolution();
+        static ISolvable Solvable => new LargestProductInaGridSolution();
 
         static void Main(string[] args)
         {

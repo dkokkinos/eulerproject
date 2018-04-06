@@ -40,6 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="P11_LargestProductInaGrid\Diagonal135DegreesNumberParser.cs" />
+    <Compile Include="P11_LargestProductInaGrid\Diagonal45DegreesNumberParser.cs" />
+    <Compile Include="P11_LargestProductInaGrid\HorizontalNumberParser.cs" />
+    <Compile Include="P11_LargestProductInaGrid\LargestProductInaGridSolution.cs" />
+    <Compile Include="P11_LargestProductInaGrid\NumberParserStrategy.cs" />
+    <Compile Include="P11_LargestProductInaGrid\VerticalNumberParser.cs" />
     <Compile Include="P3_Largest prime factor\LargestPrimeFactorSolution.cs" />
     <Compile Include="P1_Multiplesof3and5\FiveMultiple.cs" />
     <Compile Include="P1_Multiplesof3and5\Multiple.cs" />
