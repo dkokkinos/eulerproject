@@ -46,6 +46,14 @@
     <Compile Include="P11_LargestProductInaGrid\LargestProductInaGridSolution.cs" />
     <Compile Include="P11_LargestProductInaGrid\NumberParserStrategy.cs" />
     <Compile Include="P11_LargestProductInaGrid\VerticalNumberParser.cs" />
+    <Compile Include="P12_HighlyDivisibleTriangularNumber\ConditionCheckers\CounterConditionChecker.cs" />
+    <Compile Include="P12_HighlyDivisibleTriangularNumber\HighlyDivisibleTriangularNumberSolution.cs" />
+    <Compile Include="P12_HighlyDivisibleTriangularNumber\IConditionChecker.cs" />
+    <Compile Include="P12_HighlyDivisibleTriangularNumber\INumberBreaker.cs" />
+    <Compile Include="P12_HighlyDivisibleTriangularNumber\INumberGenerator.cs" />
+    <Compile Include="P12_HighlyDivisibleTriangularNumber\NumberBreakers\DivisorNumberBreaker.cs" />
+    <Compile Include="P12_HighlyDivisibleTriangularNumber\NumberGenerators\SquaredNumberGenerator.cs" />
+    <Compile Include="P12_HighlyDivisibleTriangularNumber\NumberGenerators\TriangleNumberGenerator.cs" />
     <Compile Include="P3_Largest prime factor\LargestPrimeFactorSolution.cs" />
     <Compile Include="P1_Multiplesof3and5\FiveMultiple.cs" />
     <Compile Include="P1_Multiplesof3and5\Multiple.cs" />
@@ -68,6 +76,9 @@
       <Project>{EE4CFA34-9881-4789-A67A-239C69B5A85D}</Project>
       <Name>Interfaces</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="P11_LargestProductInaGrid\images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
