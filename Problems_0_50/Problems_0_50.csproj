@@ -54,6 +54,7 @@
     <Compile Include="P12_HighlyDivisibleTriangularNumber\NumberBreakers\DivisorNumberBreaker.cs" />
     <Compile Include="P12_HighlyDivisibleTriangularNumber\NumberGenerators\SquaredNumberGenerator.cs" />
     <Compile Include="P12_HighlyDivisibleTriangularNumber\NumberGenerators\TriangleNumberGenerator.cs" />
+    <Compile Include="P13_LargeSum\LargeSumSolution.cs" />
     <Compile Include="P3_Largest prime factor\LargestPrimeFactorSolution.cs" />
     <Compile Include="P1_Multiplesof3and5\FiveMultiple.cs" />
     <Compile Include="P1_Multiplesof3and5\Multiple.cs" />
