@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +56,26 @@
     <Compile Include="P12_HighlyDivisibleTriangularNumber\NumberGenerators\SquaredNumberGenerator.cs" />
     <Compile Include="P12_HighlyDivisibleTriangularNumber\NumberGenerators\TriangleNumberGenerator.cs" />
     <Compile Include="P13_LargeSum\LargeSumSolution.cs" />
+    <Compile Include="P14_LongestCollatzSequence\Detectors\EvenNumberDetection.cs" />
+    <Compile Include="P14_LongestCollatzSequence\Detectors\OddDetection.cs" />
+    <Compile Include="P14_LongestCollatzSequence\Generators\HalferGenerator.cs" />
+    <Compile Include="P14_LongestCollatzSequence\Generators\ThreeNPlusOneGenerator.cs" />
+    <Compile Include="P14_LongestCollatzSequence\IDetection.cs" />
+    <Compile Include="P14_LongestCollatzSequence\IGenerator.cs" />
+    <Compile Include="P14_LongestCollatzSequence\LongestCollatzSequenceSolution.cs" />
+    <Compile Include="P15_LatticePaths\Structures\Direction.cs" />
+    <Compile Include="P15_LatticePaths\LatticePathsSolution.cs" />
+    <Compile Include="P15_LatticePaths\Structures\Directions\DownDirection.cs" />
+    <Compile Include="P15_LatticePaths\Structures\Directions\LeftDirection.cs" />
+    <Compile Include="P15_LatticePaths\Structures\Directions\UpDirection.cs" />
+    <Compile Include="P15_LatticePaths\Structures\Map.cs" />
+    <Compile Include="P15_LatticePaths\Structures\Node.cs" />
+    <Compile Include="P15_LatticePaths\Structures\Point.cs" />
+    <Compile Include="P15_LatticePaths\Structures\Directions\RightDirection.cs" />
+    <Compile Include="P15_LatticePaths\Structures\Size.cs" />
+    <Compile Include="P16_PowerDigitSum\PowerDigitSumSolution.cs" />
+    <Compile Include="P17_NumberLetterCounts\NumberLetterCountsSolution.cs" />
+    <Compile Include="P18_MaximumPathSumI\MaximumPathSumISolution.cs" />
     <Compile Include="P3_Largest prime factor\LargestPrimeFactorSolution.cs" />
     <Compile Include="P1_Multiplesof3and5\FiveMultiple.cs" />
     <Compile Include="P1_Multiplesof3and5\Multiple.cs" />
