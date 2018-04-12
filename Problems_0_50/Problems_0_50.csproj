@@ -75,7 +75,8 @@
     <Compile Include="P15_LatticePaths\Structures\Size.cs" />
     <Compile Include="P16_PowerDigitSum\PowerDigitSumSolution.cs" />
     <Compile Include="P17_NumberLetterCounts\NumberLetterCountsSolution.cs" />
-    <Compile Include="P18_MaximumPathSumI\MaximumPathSumISolution.cs" />
+    <Compile Include="P19_CountingSundays\CountingSundaysSolution.cs" />
+    <Compile Include="P20_FactorialDigitSum\FactorialDigitSumSolution.cs" />
     <Compile Include="P3_Largest prime factor\LargestPrimeFactorSolution.cs" />
     <Compile Include="P1_Multiplesof3and5\FiveMultiple.cs" />
     <Compile Include="P1_Multiplesof3and5\Multiple.cs" />
@@ -101,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="P11_LargestProductInaGrid\images\" />
+    <Folder Include="P18_MaximumPathSumI\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
