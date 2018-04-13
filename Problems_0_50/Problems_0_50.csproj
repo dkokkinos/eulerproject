@@ -77,6 +77,8 @@
     <Compile Include="P17_NumberLetterCounts\NumberLetterCountsSolution.cs" />
     <Compile Include="P19_CountingSundays\CountingSundaysSolution.cs" />
     <Compile Include="P20_FactorialDigitSum\FactorialDigitSumSolution.cs" />
+    <Compile Include="P21_AmicableNumbers\AmicableNumbersSolution.cs" />
+    <Compile Include="P22_NamesScores\NamesScoresSolution.cs" />
     <Compile Include="P3_Largest prime factor\LargestPrimeFactorSolution.cs" />
     <Compile Include="P1_Multiplesof3and5\FiveMultiple.cs" />
     <Compile Include="P1_Multiplesof3and5\Multiple.cs" />
