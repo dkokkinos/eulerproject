@@ -9,6 +9,7 @@ using Problems_0_50.P2_Even_Fibonacci_numbers;
 using Problems_0_50.P20_FactorialDigitSum;
 using Problems_0_50.P22_NamesScores;
 using Problems_0_50.P23_NonAbundantSums;
+using Problems_0_50.P24_LexicographicPermutations;
 using Problems_0_50.P4_Largest_palindrome_product;
 using Problems_0_50.P5_Smallest_multiple;
 using Problems_0_50.P6_Sum_square_difference;
@@ -21,7 +22,7 @@ namespace EulerConsole
 {
     public class Program
     {
-        static ISolvable Solvable => new NonAbundantSumsSolution();
+        static ISolvable Solvable => new LexicographicPermutationsSolution();
 
         static void Main(string[] args)
         {
