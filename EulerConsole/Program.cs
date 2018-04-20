@@ -11,6 +11,7 @@ using Problems_0_50.P20_FactorialDigitSum;
 using Problems_0_50.P22_NamesScores;
 using Problems_0_50.P23_NonAbundantSums;
 using Problems_0_50.P24_LexicographicPermutations;
+using Problems_0_50.P25_1000DigitFibonacciNumber;
 using Problems_0_50.P4_Largest_palindrome_product;
 using Problems_0_50.P5_Smallest_multiple;
 using Problems_0_50.P6_Sum_square_difference;
@@ -24,7 +25,7 @@ namespace EulerConsole
     public class Program
     {
 
-        static ISolvable Solvable => new LatticePathsSolution();
+        static ISolvable Solvable => new _1000DigitFibonacciNumberSolution();
 
 
         static void Main(string[] args)

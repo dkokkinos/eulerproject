@@ -81,6 +81,7 @@
     <Compile Include="P22_NamesScores\NamesScoresSolution.cs" />
     <Compile Include="P23_NonAbundantSums\NonAbundantSumsSolution.cs" />
     <Compile Include="P24_LexicographicPermutations\LexicographicPermutationsSolution.cs" />
+    <Compile Include="P25_1000DigitFibonacciNumber\1000DigitFibonacciNumberSolution.cs" />
     <Compile Include="P3_Largest prime factor\LargestPrimeFactorSolution.cs" />
     <Compile Include="P1_Multiplesof3and5\FiveMultiple.cs" />
     <Compile Include="P1_Multiplesof3and5\Multiple.cs" />
