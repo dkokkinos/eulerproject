@@ -6,7 +6,7 @@ This project consists of:
 * Interfaces that contain an ISolvable interface, which should be implemented by the corresponding classes, so that the console application addresses them uniformly
 * Problems. Here are all the solutions to every problem. Each solution has a root class that implements the ISolvable interface
 
- It seemed more appropriate to me to isolate some aspects of the problem and let them independently vary from the rest of the application. This is why many of the problems are addressed in a design patterns approach.The problems below are examples of this approach. 
+The problems solved with a 'Design Patterns' approach. For example:
 
 #### problem 11: Largest product in a grid
 
@@ -15,10 +15,10 @@ To make this problem a bit more challenging, I added a degree of freedom to thes
 * the matrix should not have predefined dimensions, the dimensions should be calculated at runtime.
 * the matrix should be provided in plain text with space separated values (so that it's easy to import such a matrix from a text file)
 * the number of adjacent numbers should be a variable. The problem states 4 adjacent numbers,  but we will treat it as a variable.
-* the type of adjacent numbers we are going to calculate (are they going to be diagonal, vertical or horizontal?) This enables us to extend the application to support any type of adjacent numbers (for example a cross) without many modifications.
-* the type of calculation (the result here is a product, but I think it would be wise to isolate that calculation from the template algorithm)
+* the type of adjacent numbers we are going to calculate (are they going to be diagonal, vertical or horizontal?) This enables us to extend the application to support any type of adjacent numbers (for example a cross).
+* the type of calculation (the result here is a product, but we isolate that calculation from the template algorithm)
 
-Just to make clear what a horizontal, vertical and diagonal adjacent numbers are, I've colored 4 adjacent "modes" in the matrix bellow.
+As a clarification, horizontal, vertical and diagonal adjacent numbers are shown in the matrix bellow.
 * vertical -> red
 * horizontal -> yellow
 * diagonal 45 degrees -> green
@@ -26,15 +26,13 @@ Just to make clear what a horizontal, vertical and diagonal adjacent numbers are
 
 ![matrix](https://raw.githubusercontent.com/codedayafternoon/eulerproject/master/Problems_0_50/P11_LargestProductInaGrid/images/problem11table.jpg)
 
-To add a degree of freedom as to which adjacent modes (horizonal, vertical, diagonal) are going to be calculated, I made an abstract NumberParserStrategy which has two abstract functions. These functions will be implemented by all the following derived classes:
+The adjacent mode (horizonal, vertical, diagonal) are modeled with the abstract NumberParserStrategy which has two abstract functions. These functions will be implemented by all the following derived classes:
 * Diagonal135DegreesNumberParser
 * Diagonal45DegreesNumberParser
 * HorizontalNumberParser
 * VerticalNumberParser
 
-and any other future mode.
-
-The class diagram bellow shows the mentioned configuration. 
+The related class diagram is shown bellow. 
 
 ![class diagram](https://raw.githubusercontent.com/codedayafternoon/eulerproject/master/Problems_0_50/P11_LargestProductInaGrid/images/euler_problem11.jpg)
 
