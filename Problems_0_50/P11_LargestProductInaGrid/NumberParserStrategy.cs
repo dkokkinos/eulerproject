@@ -22,7 +22,7 @@ namespace Problems_0_50.P11_LargestProductInaGrid
 
         public string AsString()
         {
-            return $"{GetType()}: {(this.Max.HasValue ? $"Max:{this.Max.Value} [{string.Join(",", Numbers)}]" : "There is no max")}";
+            return $"{this}: {(this.Max.HasValue ? $"Max:{this.Max.Value} [{string.Join(",", Numbers)}]" : "There is no max")}";
         }
     }
 }

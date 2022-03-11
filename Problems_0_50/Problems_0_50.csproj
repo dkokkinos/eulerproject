@@ -42,12 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="P11_LargestProductInaGrid\Diagonal135DegreesNumberParser.cs" />
-    <Compile Include="P11_LargestProductInaGrid\Diagonal45DegreesNumberParser.cs" />
-    <Compile Include="P11_LargestProductInaGrid\HorizontalNumberParser.cs" />
+    <Compile Include="P11_LargestProductInaGrid\adjusencyParsers\Diagonal135DegreesNumberParser.cs" />
+    <Compile Include="P11_LargestProductInaGrid\adjusencyParsers\Diagonal45DegreesNumberParser.cs" />
+    <Compile Include="P11_LargestProductInaGrid\adjusencyParsers\HorizontalNumberParser.cs" />
+    <Compile Include="P11_LargestProductInaGrid\IOperation.cs" />
     <Compile Include="P11_LargestProductInaGrid\LargestProductInaGridSolution.cs" />
+    <Compile Include="P11_LargestProductInaGrid\LargestProductInAGridSolver.cs" />
     <Compile Include="P11_LargestProductInaGrid\NumberParserStrategy.cs" />
-    <Compile Include="P11_LargestProductInaGrid\VerticalNumberParser.cs" />
+    <Compile Include="P11_LargestProductInaGrid\adjusencyParsers\VerticalNumberParser.cs" />
+    <Compile Include="P11_LargestProductInaGrid\operations\ProductOperation.cs" />
+    <Compile Include="P11_LargestProductInaGrid\operations\SumOperation.cs" />
     <Compile Include="P12_HighlyDivisibleTriangularNumber\ConditionCheckers\CounterConditionChecker.cs" />
     <Compile Include="P12_HighlyDivisibleTriangularNumber\HighlyDivisibleTriangularNumberSolution.cs" />
     <Compile Include="P12_HighlyDivisibleTriangularNumber\IConditionChecker.cs" />

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Interfaces;
+using Problems_0_50.P11_LargestProductInaGrid.operations;
 
 namespace Problems_0_50.P11_LargestProductInaGrid
 {
@@ -49,37 +50,18 @@ namespace Problems_0_50.P11_LargestProductInaGrid
                 new VerticalNumberParser(),
                 new HorizontalNumberParser()
             };
-            int max = 0;
 
-            for (int y = 0; y < matrix.GetLength(0); y++)
+            IOperation operation = new ProductOperation();
+            LargestProductInAGridSolver solver = new LargestProductInAGridSolver(4, parserStrategies, operation);
+            var res = solver.Solve(matrix);
+            foreach(var r in res)
             {
-                for (int x = 0; x < matrix.GetLength(1); x++)
-                {
-                    foreach (var numberParserStrategy in parserStrategies)
-                    {
-                        if(!numberParserStrategy.IsInBounds(x, y, Adjusent, matrix))
-                            continue;
-                        var numbers = numberParserStrategy.GetNumbers(x, y, Adjusent, matrix);
-                        var result = MakeOperation(numbers);
-                        if (max < result)
-                        {
-                            max = result;
-                            numberParserStrategy.UpdateMax(max, numbers);
-                        }
-                    }
-                }
+                Console.WriteLine(r.AsString());
             }
-
             var parser = parserStrategies.OrderByDescending(x => x.Max).First();
-            Console.WriteLine(parser.AsString());
-          
-        }
+            Console.WriteLine("Maximum overall: " + parser.AsString());
 
-        private int MakeOperation(int[] numbers)
-        {
-            return numbers.Aggregate(1, (current, number) => current*number);
         }
-
         private int[,] ConvertMatrixToArray(string m)
         {
             string[] rows = m.Split( new[] {Environment.NewLine}, StringSplitOptions.None );
