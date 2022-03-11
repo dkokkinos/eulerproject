@@ -13,7 +13,7 @@ namespace Problems_0_50.P11_LargestProductInaGrid
             int[] res = new int[adjacent];
             for (int a = 0; a < adjacent; a++)
             {
-                res[a] = matrix[x, y];
+                res[a] = matrix[y, x];
                 x++;
             }
             return res;
@@ -21,11 +21,14 @@ namespace Problems_0_50.P11_LargestProductInaGrid
 
         public override bool IsInBounds(int x, int y, int adjacent, int[,] matrix)
         {
-            int x_diff = matrix.GetLength(0) - x;
-            if (x_diff < adjacent)
-                return false;
-            return true;
+            int matrixX = matrix.GetLength(1);
+            int x_diff = matrixX - x ;
+            if (x_diff >= adjacent)
+                return true;
+            return false;
+            
         }
+        
 
         public override string ToString()
         {

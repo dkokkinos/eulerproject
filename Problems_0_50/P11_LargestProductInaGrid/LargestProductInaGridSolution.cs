@@ -34,6 +34,11 @@ namespace Problems_0_50.P11_LargestProductInaGrid
                                  "01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48";
 
 
+        //private string _matrix = "1  2  3  4  2" + nl +
+        //                         "5  6  7  8  2" + nl +
+        //                         "9  10 11 12 2" + nl +
+        //                         "13 14 15 16 2";
+
         public void Solve()
         {
             int[,] matrix = this.ConvertMatrixToArray(this._matrix);
@@ -46,32 +51,28 @@ namespace Problems_0_50.P11_LargestProductInaGrid
             };
             int max = 0;
 
-            // generic algorithm
-            for (int r = 0; r < matrix.GetLength(0); r++)
+            for (int y = 0; y < matrix.GetLength(0); y++)
             {
-                for (int c = 0; c < matrix.GetLength(1); c++)
+                for (int x = 0; x < matrix.GetLength(1); x++)
                 {
                     foreach (var numberParserStrategy in parserStrategies)
                     {
-                        if(!numberParserStrategy.IsInBounds(r, c, Adjusent, matrix))
+                        if(!numberParserStrategy.IsInBounds(x, y, Adjusent, matrix))
                             continue;
-                        var numbers = numberParserStrategy.GetNumbers(r, c, Adjusent, matrix);
+                        var numbers = numberParserStrategy.GetNumbers(x, y, Adjusent, matrix);
                         var result = MakeOperation(numbers);
                         if (max < result)
                         {
                             max = result;
-                            PrintResult(numbers, result, numberParserStrategy);
+                            numberParserStrategy.UpdateMax(max, numbers);
                         }
                     }
                 }
             }
 
-        }
-
-        private void PrintResult(int[] numbers, int result, NumberParserStrategy numberParserStrategy)
-        {
-            Console.WriteLine(
-                $"for {numberParserStrategy} the result is {result} for numbers {string.Join(",", numbers)}");
+            var parser = parserStrategies.OrderByDescending(x => x.Max).First();
+            Console.WriteLine(parser.AsString());
+          
         }
 
         private int MakeOperation(int[] numbers)
@@ -81,24 +82,18 @@ namespace Problems_0_50.P11_LargestProductInaGrid
 
         private int[,] ConvertMatrixToArray(string m)
         {
-            string[] rows = m.Split(
-                new[] {Environment.NewLine},
-                StringSplitOptions.None
-                );
+            string[] rows = m.Split( new[] {Environment.NewLine}, StringSplitOptions.None );
 
-            int[,] res = new int[ rows.Length, rows[0].Split(' ').Count()];
+            int[,] res = new int[ rows.Length, rows[0].Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Count()];
 
             int rowIndex = 0;
             int columnIndex = 0;
             foreach (var row in rows)
             {
-                string[] columns = row.Split(
-                    new[] {' '},
-                    StringSplitOptions.None
-                    );
+                string[] columns = row.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                 foreach (var x in columns)
                 {
-                    res[rowIndex, columnIndex] = this.ConvertToInt(x);
+                    res[rowIndex, columnIndex] = Convert.ToInt32(x);
                     columnIndex++;
                 }
                 rowIndex++;
@@ -106,18 +101,6 @@ namespace Problems_0_50.P11_LargestProductInaGrid
             }
 
             return res;
-        }
-
-        private int ConvertToInt(string x)
-        {
-            try
-            {
-                return Convert.ToInt32(x);
-            }
-            catch (Exception)
-            {
-                return 1;
-            }
         }
 
     }

@@ -10,10 +10,10 @@ namespace Problems_0_50.P11_LargestProductInaGrid
     {
         public override int[] GetNumbers(int x, int y, int adjacent, int[,] matrix)
         {
-            int [] res = new int[adjacent];
-            for (int a = 0; a < adjacent; a++)
+            int[] res = new int[adjacent];
+            for (int index = 0; index < adjacent; index++)
             {
-                res[a] = matrix[x, y];
+                res[index] = matrix[y, x];
                 y++;
             }
             return res;
@@ -21,10 +21,10 @@ namespace Problems_0_50.P11_LargestProductInaGrid
 
         public override bool IsInBounds(int x, int y, int adjacent, int[,] matrix)
         {
-            int y_diff = matrix.GetLength(1) - y;
-            if (y_diff < adjacent)
-                return false;
-            return true;
+            int y_diff = matrix.GetLength(0) - y;
+            if (y_diff >= adjacent)
+                return true;
+            return false;
         }
 
         public override string ToString()
