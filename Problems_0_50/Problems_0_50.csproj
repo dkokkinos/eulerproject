@@ -81,9 +81,10 @@
     <Compile Include="P16_PowerDigitSum\PowerDigitSumSolution.cs" />
     <Compile Include="P17_NumberLetterCounts\NumberLetterCountsSolution.cs" />
     <Compile Include="P17_NumberLetterCounts_DesignPatterns\NumberLetterCountsDesignPatternsSolution.cs" />
-    <Compile Include="P17_NumberLetterCounts_DesignPatterns\Operator.cs" />
-    <Compile Include="P17_NumberLetterCounts_DesignPatterns\Subject.cs" />
-    <Compile Include="P17_NumberLetterCounts_DesignPatterns\SubjectVisitor.cs" />
+    <Compile Include="P17_NumberLetterCounts_DesignPatterns\Operators.cs" />
+    <Compile Include="P17_NumberLetterCounts_DesignPatterns\Subjects.cs" />
+    <Compile Include="P17_NumberLetterCounts_DesignPatterns\SubjectIterators.cs" />
+    <Compile Include="P17_NumberLetterCounts_DesignPatterns\SubjectVisitors.cs" />
     <Compile Include="P19_CountingSundays\CountingSundaysSolution.cs" />
     <Compile Include="P20_FactorialDigitSum\FactorialDigitSumSolution.cs" />
     <Compile Include="P21_AmicableNumbers\AmicableNumbersSolution.cs" />
