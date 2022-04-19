@@ -45,14 +45,14 @@ namespace Problems_0_50.P11_LargestProductInaGrid
             int[,] matrix = this.ConvertMatrixToArray(this._matrix);
             List<NumberParserStrategy> parserStrategies = new List<NumberParserStrategy>()
             {
-                new Diagonal45DegreesNumberParser(),
-                new Diagonal135DegreesNumberParser(),
+                //new Diagonal45DegreesNumberParser(),
+                //new Diagonal135DegreesNumberParser(),
                 new VerticalNumberParser(),
                 new HorizontalNumberParser()
             };
 
-            IOperation operation = new ProductOperation();
-            LargestProductInAGridSolver solver = new LargestProductInAGridSolver(4, parserStrategies, operation);
+            IOperation operation = new SumOperation();
+            LargestProductInAGridSolver solver = new LargestProductInAGridSolver(3, parserStrategies, operation);
             var res = solver.Solve(matrix);
             foreach(var r in res)
             {
