@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Problems_0_50.P17_NumberLetterCounts_DesignPatterns
 {
-    public abstract class Operator
+    public abstract class Operation
     {
         public abstract void Push(object value);
         public abstract object Pop();
     }
 
-    public class SumOperator : Operator
+    public class SumOperation : Operation
     {
         public decimal sum = 0;
         private readonly bool _countSpaces;
 
-        public SumOperator(bool countSpaces = false)
+        public SumOperation(bool countSpaces = false)
         {
             _countSpaces = countSpaces;
         }
@@ -42,11 +42,11 @@ namespace Problems_0_50.P17_NumberLetterCounts_DesignPatterns
         }
     }
 
-    public class AvgOperator : SumOperator
+    public class AvgOperation : SumOperation
     {
         private int count;
 
-        public AvgOperator(bool countSpaces = false) : base(countSpaces)
+        public AvgOperation(bool countSpaces = false) : base(countSpaces)
         {
         }
 

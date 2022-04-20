@@ -20,48 +20,51 @@ namespace Problems_0_50.P17_NumberLetterCounts_DesignPatterns
             solver = this.CreateForAverageFirst100BGGEntries();
             res = solver.Solve();
 
+            solver = this.CreateForAverageTitleLenghtOfBGGEntries();
+            res = solver.Solve();
+
             solver = this.CreateForAverageTitleLenghtOfToolSongs();
             res = solver.Solve();
         }
 
-        NumberLetterCountsDesignPatternsSolver<SongEntry> CreateForAverageTitleLenghtOfToolSongs()
+        Solver<SongEntry> CreateForAverageTitleLenghtOfToolSongs()
         {
-            return new NumberLetterCountsDesignPatternsSolver<SongEntry>(
+            return new Solver<SongEntry>(
                new SequencialSongEntriesIterator("tool_songs.txt", 70),
                new ToStringRepresentation(),
-               new AvgOperator());
+               new SumOperation());
         }
 
-        NumberLetterCountsDesignPatternsSolver<BGGEntry> CreateForAverageTitleLenghtOfBGGEntries()
+        Solver<BGGEntry> CreateForAverageTitleLenghtOfBGGEntries()
         {
-            return new NumberLetterCountsDesignPatternsSolver<BGGEntry>(
+            return new Solver<BGGEntry>(
                new SequencialBGGEntriesIterator(0, 99),
                new ToStringRepresentation(),
-               new AvgOperator());
+               new AvgOperation());
         }
 
-        NumberLetterCountsDesignPatternsSolver<BGGEntry> CreateForAverageFirst100BGGEntries()
+        Solver<BGGEntry> CreateForAverageFirst100BGGEntries()
         {
-            return new NumberLetterCountsDesignPatternsSolver<BGGEntry>(
+            return new Solver<BGGEntry>(
                new SequencialBGGEntriesIterator(0, 99),
                new Rank(),
-               new AvgOperator());
+               new AvgOperation());
         }
 
-        NumberLetterCountsDesignPatternsSolver<Number> CreateForAverageFirst100Numbers()
+        Solver<Number> CreateForAverageFirst100Numbers()
         {
-            return new NumberLetterCountsDesignPatternsSolver<Number>(
+            return new Solver<Number>(
                new SequencialNumbersIterator(1, 100),
                new Rank(),
-               new AvgOperator());
+               new AvgOperation());
         }
 
-        NumberLetterCountsDesignPatternsSolver<Number> CreateSolverForProjectEuler()
+        Solver<Number> CreateSolverForProjectEuler()
         {
-            return new NumberLetterCountsDesignPatternsSolver<Number>(
+            return new Solver<Number>(
                 new SequencialNumbersIterator(1, 1000), 
                 new ToTextRepresentation(),
-                new SumOperator());
+                new SumOperation());
         }
     }
 
@@ -70,20 +73,20 @@ namespace Problems_0_50.P17_NumberLetterCounts_DesignPatterns
         object Solve();
     }
 
-    public class NumberLetterCountsDesignPatternsSolver<T> : ISolver
+    public class Solver<T> : ISolver
         where T : Subject
     {
         private readonly SubjectIterator<T> _iterator;
         private readonly SubjectVisitor _translator;
-        private readonly Operator _operator;
+        private readonly Operation _operation;
 
-        public NumberLetterCountsDesignPatternsSolver(SubjectIterator<T> iterator,
+        public Solver(SubjectIterator<T> iterator,
             SubjectVisitor translator,
-            Operator @operator)
+            Operation operation)
         {
             _iterator = iterator;
             _translator = translator;
-            _operator = @operator;
+            _operation = operation;
         }
 
         public object Solve()
@@ -91,10 +94,10 @@ namespace Problems_0_50.P17_NumberLetterCounts_DesignPatterns
             foreach (var s in _iterator.Next())
             {
                 var translated = Translate(s);
-                _operator.Push(translated);
+                _operation.Push(translated);
             }
 
-            var res = _operator.Pop();
+            var res = _operation.Pop();
             return res;
         }
 
